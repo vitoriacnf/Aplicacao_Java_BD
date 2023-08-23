@@ -1,6 +1,8 @@
 package aplicacaoBD;
 
 
+import databaseutil.ConexaoBancoDados;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -60,8 +62,16 @@ public class PessoaDAO {
             rs = preparedStatement.executeQuery();
 
             while (rs.next()) {
-                System.out.println(rs.getInt("id") + ", " + rs.getString("nome"));
+                System.out.println(
+                        rs.getInt("id") + ", " +
+                                rs.getString("nome") + ", " +
+                                rs.getString("cpf") + ", " +
+                                rs.getString("telefone") + ", " +
+                                rs.getString("email") + ", " +
+                                rs.getDate("data_nascimento")
+                );
             }
+
 
         } catch (SQLException e) {
             System.out.println("Erro ao recuparar os dados solicitados" + e.getMessage());

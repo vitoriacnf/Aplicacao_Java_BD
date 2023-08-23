@@ -1,4 +1,4 @@
-package aplicacaoBD;
+package databaseutil;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -22,7 +22,7 @@ public class ConexaoBancoDados {
         return null;
     }
 
-    static Connection obterConexao() {
+    public static Connection obterConexao() {
         if (conexao == null) {
             criarConexao();
         }
